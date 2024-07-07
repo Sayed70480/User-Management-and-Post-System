@@ -13,17 +13,26 @@
   </head>
   <body>
     <div class="min-h-full bg-zinc-900 text-white p-6">
-      <div class="flex justify-end">
+      <div class="flex justify-end gap-4">
+        <a
+          href="/profile/upload"
+          class="flex mt-6 w-52 mb-10 justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >Upload Profile Picture</a
+        >
         <a
           href="/logout"
           class="flex mt-6 w-28 mb-10 justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >Logout</a
         >
       </div>
-      <h2 class="font-medium text-2xl">
-        Hello! <%= user.name %> Welcome to Profile
-      </h2>
-      <h2 class="font-medium text-xl">You can Create a New Post</h2>
+      <div class="flex gap-4 justify-center items-center">
+        <div class="w-12 h-12   "><img class="w-full h-full object-cover rounded-3xl" src="/Images/upload/<%= user.profilepic %>" alt=""></div>
+        <h2 class="font-medium text-2xl">
+          Hello! <%= user.name %> Welcome to Profile
+        </h2>
+       
+      </div>
+      <h2 class="font-medium text-xl text-center">You can Create a New Post</h2>
       <form action="/post" method="POST">
         <textarea
           name="content"
